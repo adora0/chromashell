@@ -100,6 +100,8 @@ int main(int argc, char **argv)
         ioctl(0, TIOCGWINSZ, &winsz);
         for (int i = 0; i < n_segments; ++i)
             print_segment(&winsz, &segments[i]);
+
+        free(segments);
     }
 
     return EXIT_SUCCESS;
