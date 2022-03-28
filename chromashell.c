@@ -53,9 +53,6 @@ int main(int argc, char **argv)
                     }
                     else
                     {
-                        if (segments != NULL)
-                            free(segments);
-
                         display_help(basename);
                         return EXIT_FAILURE;
                     }
