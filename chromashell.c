@@ -200,7 +200,6 @@ void display_version(void)
 int err_alloc(void)
 {
     printf("Error (re)allocating memory\n");
-
     return EXIT_FAILURE;
 }
 
