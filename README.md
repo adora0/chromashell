@@ -24,7 +24,7 @@ Implemented in POSIX C99 with no external libraries.
 
 `./chromashell -h`
 
-### Display a Transgender Flag
+### Display a Transgender Flag!
 
 `./chromashell -s 7ACBF5,2 -s EAACB8,2 -s FFFFFF,2 -s EAACB8,2 -s 7ACBF5,2`
 
