@@ -21,7 +21,7 @@ bool is_uint(const char *);
 void print_segment(struct winsize *, struct segment *);
 void display_examples(const char *);
 void display_help(const char *);
-void display_version();
+void display_version(void);
 int err_alloc(void);
 int err_no_arg(const char *, const char *);
 int err_no_opt(const char *, const char *);

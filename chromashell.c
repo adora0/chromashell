@@ -180,7 +180,7 @@ void display_help(const char *basename)
         basename);
 }
 
-void display_version()
+void display_version(void)
 {
     printf(
         "ChromaShell %s\n"
