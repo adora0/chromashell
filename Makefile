@@ -6,4 +6,6 @@ all: chromashell
 chromashell: $(OBJS)
 
 %.o: %.c
-	@$(CC) -o $@ -c $<
+	@$(CC) -MD -o $@ -c $<
+
+-include $(OBJS:.o=.d)

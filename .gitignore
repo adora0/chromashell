@@ -1,2 +1,3 @@
-chromashell
+/chromashell
 *.o
+*.d

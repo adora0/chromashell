@@ -9,7 +9,7 @@ Implemented in POSIX C99 with no external libraries.
 ## Requirements
 
 - POSIX-compliant operating system
-- Terminal or terminal emulator with true color support
+- Terminal with true color support
 
 ## Build Prerequisites
 
@@ -24,7 +24,7 @@ Implemented in POSIX C99 with no external libraries.
 
 `./chromashell -h`
 
-### Display a Transgender Flag!
+### Example: Display a Transgender Flag
 
 `./chromashell -s 7ACBF5,2 -s EAACB8,2 -s FFFFFF,2 -s EAACB8,2 -s 7ACBF5,2`
 

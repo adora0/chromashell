@@ -1,0 +1,63 @@
+#ifndef PRESETS_H
+#define PRESETS_H
+
+#include "chromashell.h"
+
+const SegmentGroup preset_trans =
+{
+    "trans",
+    5,
+    {
+        { 0x7A, 0xCB, 0xF5, 2 },
+        { 0xEA, 0xAC, 0xB8, 2 },
+        { 0xFF, 0xFF, 0xFF, 2 },
+        { 0xEA, 0xAC, 0xB8, 2 },
+        { 0x7A, 0xCB, 0xF5, 2 }
+    }
+};
+
+const SegmentGroup preset_lesbian =
+{
+    "lesbian",
+    7,
+    {
+        { 0xD6, 0x2D, 0x00, 1 },
+        { 0xEF, 0x76, 0x27, 1 },
+        { 0xFF, 0x9A, 0x56, 1 },
+        { 0xFF, 0xFF, 0xFF, 1 },
+        { 0xD1, 0x62, 0xA4, 1 },
+        { 0xB5, 0x56, 0x90, 1 },
+        { 0xA3, 0x02, 0x62, 1 }
+    }
+};
+
+const SegmentGroup preset_nonbinary =
+{
+    "nonbinary",
+    4,
+    {
+        { 0xFC, 0xF4, 0x34, 2 },
+        { 0xFF, 0xFF, 0xFF, 2 },
+        { 0x9C, 0x59, 0xD1, 2 },
+        { 0x2C, 0x2C, 0x2C, 2 }
+    }
+};
+
+const SegmentGroup preset_bisexual =
+{
+    "bisexual",
+    3,
+    {
+        { 0xD6, 0x02, 0x70, 3 },
+        { 0x9B, 0x4F, 0x96, 2 },
+        { 0x00, 0x38, 0xA8, 3 }
+    }
+};
+
+SegmentPresets presets =
+{
+    4,
+    { &preset_trans, &preset_lesbian, &preset_nonbinary, &preset_bisexual }
+};
+
+#endif
