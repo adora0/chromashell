@@ -12,7 +12,6 @@ int main(int argc, char **argv)
     bool arg_parsed = false;
     struct segment *segments = NULL;
     unsigned int n_segments = 0;
-
     for (int arg_index = 1; arg_index < argc; ++arg_index)
     {
         const char *arg = argv[arg_index];
@@ -166,8 +165,14 @@ void display_examples(const char *basename)
 {
     printf(
         "Transgender flag:\n"
-        " %s -s 7ACBF5,2 -s EAACB8,2 -s FFFFFF,2 -s EAACB8,2 -s 7ACBF5,2\n",
-        basename);
+        " %s -s 7ACBF5,2 -s EAACB8,2 -s FFFFFF,2 -s EAACB8,2 -s 7ACBF5,2\n\n"
+        "Lesbian flag:\n"
+        " %s -s D62D00,1 -s EF7627,1 -s FF9A56,1 -s FFFFFF,1 -s D162A4,1 -s B55690,1 -s A30262,1\n\n"
+        "Nonbinary flag:\n"
+        " %s -s FCF434,2 -s FFFFFF,2 -s 9C59D1,2 -s 2C2C2C,2\n\n"
+        "Bisexual flag:\n"
+        " %s -s D60270,3 -s 9B4F96,2 -s 0038A8,3\n",
+        basename, basename, basename, basename);
 }
 
 void display_help(const char *basename)
