@@ -1,0 +1,6 @@
+/* CMake configured header */
+#define chromashell_VERSION_MAJOR   "@chromashell_VERSION_MAJOR@"
+#define chromashell_VERSION_MINOR   "@chromashell_VERSION_MINOR@"
+#define chromashell_VERSION_YEAR    "@chromashell_VERSION_YEAR@"
+#define INSTALL_PREFIX              "@CMAKE_INSTALL_PREFIX@"
+#define chromashell_SYSTEM_DIR      "@chromashell_SYSTEM_DIR@"

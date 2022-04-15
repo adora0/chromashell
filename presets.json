@@ -1,0 +1,98 @@
+[
+    {
+        "name": "trans",
+        "segments": [
+            {
+                "color": "#7ACBF5",
+                "height": 2
+            },
+            {
+                "color": "#EAACB8",
+                "height": 2
+            },
+            {
+                "color": "#FFFFFF",
+                "height": 2
+            },
+            {
+                "color": "#EAACB8",
+                "height": 2
+            },
+            {
+                "color": "#7ACBF5",
+                "height": 2
+            }
+        ]
+    },
+    {
+        "name": "lesbian",
+        "segments": [
+            {
+                "color": "#D62D00",
+                "height": 1
+            },
+            {
+                "color": "#EF7627",
+                "height": 1
+            },
+            {
+                "color": "#FF9A56",
+                "height": 1
+            },
+            {
+                "color": "#FFFFFF",
+                "height": 1
+            },
+            {
+                "color": "#D162A4",
+                "height": 1
+            },
+            {
+                "color": "#B55690",
+                "height": 1
+            },
+            {
+                "color": "#A30262",
+                "height": 1
+            }
+        ]
+    },
+    {
+        "name": "nonbinary",
+        "segments": [
+            {
+                "color": "#FCF434",
+                "height": 2
+            },
+            {
+                "color": "#FFFFFF",
+                "height": 2
+            },
+            {
+                "color": "#9C59D1",
+                "height": 2
+            },
+            {
+                "color": "#2C2C2C",
+                "height": 2
+            }
+        ]
+    },
+    {
+        "name": "bisexual",
+        "segments": [
+            {
+                "color": "#D60270",
+                "height": 3
+            },
+            {
+                "color": "#9B4F96",
+                "height": 2
+            },
+            {
+                "color": "#0038A8",
+                "height": 3
+            }
+        ]
+    }
+]
