@@ -36,12 +36,12 @@ install(FILES presets.json DESTINATION ${chromashell_SYSTEM_DIR})
 # Uninstall target
 if(NOT TARGET uninstall)
     configure_file(
-        "${CMAKE_CURRENT_SOURCE_DIR}/cmake_uninstall.cmake.in"
-        "${CMAKE_CURRENT_BINARY_DIR}/cmake_uninstall.cmake"
+        "${CMAKE_CURRENT_SOURCE_DIR}/uninstall.cmake.in"
+        "${CMAKE_CURRENT_BINARY_DIR}/uninstall.cmake"
         IMMEDIATE @ONLY
     )
 
     add_custom_target(uninstall
-        COMMAND ${CMAKE_COMMAND} -P ${CMAKE_CURRENT_BINARY_DIR}/cmake_uninstall.cmake
+        COMMAND ${CMAKE_COMMAND} -P ${CMAKE_CURRENT_BINARY_DIR}/uninstall.cmake
     )
 endif()
