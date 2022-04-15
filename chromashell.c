@@ -504,11 +504,10 @@ void display_version(void)
 {
     printf(
         "ChromaShell %s\n"
-        "Copyright (c) %s Adora Zero.\n"
+        "Copyright (c) %s Kriss Wiggins.\n"
         "License GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.\n"
         "This is free software: you are free to change and redistribute it.\n"
-        "There is NO WARRANTY, to the extent permitted by law.\n\n"
-        "Written by Adora.\n",
+        "There is NO WARRANTY, to the extent permitted by law.\n",
         VERSION_STRING, VERSION_YEAR);
 }
 
