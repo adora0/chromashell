@@ -10,7 +10,7 @@ set(chromashell_SYSTEM_DIR share/chromashell)
 
 configure_file(config.h.in config.h)
 
-set(chromashell_SOURCES
+add_executable(chromashell
     chromashell.c
     color.c
     typecheck.c
@@ -18,8 +18,6 @@ set(chromashell_SOURCES
     errmsg.c
     presets.c
 )
-
-add_executable(chromashell ${chromashell_SOURCES})
 
 target_include_directories(chromashell PUBLIC
     "${PROJECT_BINARY_DIR}"
