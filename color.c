@@ -3,8 +3,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stddef.h>
-#include "typecheck.h"
 #include "color.h"
+#include "typecheck.h"
 
 int hex_string_to_color(const char *str, Color *color, bool has_prefix)
 {

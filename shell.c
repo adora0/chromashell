@@ -2,10 +2,10 @@
 #include <string.h>
 #include <stddef.h>
 #include <stdlib.h>
+#include "shell.h"
 #include "errmsg.h"
 #include "segment.h"
 #include "chromashell.h"
-#include "shell.h"
 
 int split_optargs(char ***dest, char *optarg, const char *delim, unsigned int max_args)
 {

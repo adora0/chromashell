@@ -4,12 +4,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/ioctl.h>
+#include "chromashell.h"
 #include "segment.h"
 #include "shell.h"
 #include "streq.h"
 #include "typecheck.h"
 #include "errmsg.h"
-#include "chromashell.h"
 #include "presets.h"
 
 int main(int argc, char **argv)

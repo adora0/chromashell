@@ -4,9 +4,9 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include <cjson/cJSON.h>
+#include "presets.h"
 #include "segment.h"
 #include "errmsg.h"
-#include "presets.h"
 
 int load_presets(SegmentGroup **dest, FILE *file)
 {
