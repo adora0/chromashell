@@ -12,6 +12,11 @@ configure_file(config.h.in config.h)
 
 set(chromashell_SOURCES
     chromashell.c
+    color.c
+    typecheck.c
+    shell.c
+    errmsg.c
+    presets.c
 )
 
 add_executable(chromashell ${chromashell_SOURCES})
