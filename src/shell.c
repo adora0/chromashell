@@ -5,7 +5,7 @@
 #include "shell.h"
 #include "errmsg.h"
 #include "segment.h"
-#include "chromashell.h"
+#include "config.h"
 
 int split_optargs(char ***dest, char *optarg, const char *delim, unsigned int max_args)
 {
@@ -72,12 +72,12 @@ void display_presets(SegmentGroup *presets, unsigned int n_presets)
 void display_help(const char *basename)
 {
     printf(
-        "Usage: %s OPTIONS ...\n"
+        "Usage: %s <OPTION> ...\n"
         "Display lines of color in a true color terminal.\n"
-        " -s,   --segment RRGGBB,HEIGHT         specify segment hex color and height in lines\n"
-        " -p,   --preset NAME                   display preset\n"
+        " -s,   --segment <RRGGBB>,<HEIGHT>     specify segment hex color and height in lines\n"
+        " -p,   --preset <NAME>                 display preset\n"
         "                                         use '--preset list' to display available preset names\n"
-        " -c,   --config FILE                   specify path of preset configuration JSON\n"
+        " -c,   --config <FILE>                 specify path of preset configuration JSON\n"
         " -h,   --help                          display this help and exit\n"
         "       --version                       display version information and exit\n",
         basename);

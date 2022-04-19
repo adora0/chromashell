@@ -7,7 +7,7 @@ Display lines of color in a true color terminal.
 - POSIX-compliant operating system
 - Terminal with true color support
 
-## Build Requireements
+## Build requireements
 
 - `cmake` >= 3.1
 - `gcc`
@@ -18,7 +18,7 @@ Display lines of color in a true color terminal.
 
 `$ (mkdir -p build && cd build && cmake .. && make)`
 
-## Installation (as root)
+## Installation
 
 `$ (cd build && make install)`
 
@@ -28,7 +28,7 @@ Display lines of color in a true color terminal.
 
 ## Usage
 
-See output of `$ chromashell -h`
+`$ chromashell -h`
 
 ### Example: Display a transgender flag
 
@@ -37,6 +37,10 @@ See output of `$ chromashell -h`
 Or:
 
 `$ chromashell -s 7ACBF5,2 -s EAACB8,2 -s FFFFFF,2 -s EAACB8,2 -s 7ACBF5,2`
+
+## Documentation
+
+See [`doc/`](doc).
 
 ## License
 

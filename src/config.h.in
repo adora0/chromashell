@@ -1,6 +1,14 @@
 /* CMake configured header */
-#define chromashell_VERSION_MAJOR   "@chromashell_VERSION_MAJOR@"
-#define chromashell_VERSION_MINOR   "@chromashell_VERSION_MINOR@"
-#define chromashell_VERSION_YEAR    "@chromashell_VERSION_YEAR@"
-#define INSTALL_PREFIX              "@CMAKE_INSTALL_PREFIX@"
-#define chromashell_SYSTEM_DIR      "@chromashell_SYSTEM_DIR@"
+#ifndef CONFIG_H
+#define CONFIG_H
+
+#define PROJECT_NAME            "@CMAKE_PROJECT_NAME@"
+#define VERSION_MAJOR           "@chromashell_VERSION_MAJOR@"
+#define VERSION_MINOR           "@chromashell_VERSION_MINOR@"
+#define VERSION_YEAR            "@chromashell_VERSION_YEAR@"
+#define VERSION_STRING          VERSION_MAJOR"."VERSION_MINOR
+#define INSTALL_PREFIX          "@CMAKE_INSTALL_PREFIX@"
+#define SYSTEM_DIR              "@chromashell_SYSTEM_DIR@"
+#define DEFAULT_PRESET_PATH     INSTALL_PREFIX"/"SYSTEM_DIR"/presets.json"
+
+#endif

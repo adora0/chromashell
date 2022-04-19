@@ -1,10 +1,11 @@
+#include <locale.h>
+#include <stddef.h>
 #include <stdbool.h>
 #include <string.h>
-#include <stddef.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/ioctl.h>
-#include "chromashell.h"
+#include "config.h"
 #include "segment.h"
 #include "vstrcmp.h"
 #include "options.h"
@@ -15,6 +16,9 @@
 
 int main(int argc, char **argv)
 {
+    setlocale(LC_ALL, NULL);
+    textdomain(PROJECT_NAME);
+
     const char *basename = (const char *) argv[0];
     
     winsize winsz;
@@ -37,7 +41,7 @@ int main(int argc, char **argv)
             if (++argi < argc)
             {
                 char **optargs = NULL;
-                int n_optargs = split_optargs(&optargs, argv[argi], ",", 2);
+                int n_optargs = split_optargs(&optargs, argv[argi], OPTARG_SEPARATOR, 2);
                 if (n_optargs >= 2)
                 {
                     Segment segment;
