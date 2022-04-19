@@ -6,8 +6,9 @@
 #include <sys/ioctl.h>
 #include "chromashell.h"
 #include "segment.h"
+#include "vstrcmp.h"
+#include "options.h"
 #include "shell.h"
-#include "streq.h"
 #include "typecheck.h"
 #include "errmsg.h"
 #include "presets.h"
@@ -28,15 +29,15 @@ int main(int argc, char **argv)
     
     bool arg_parsed = false;
 
-    for (int arg_index = 1; arg_index < argc; ++arg_index)
+    for (int argi = 1; argi < argc; ++argi)
     {
-        const char *arg = argv[arg_index];
-        if (streqor(arg, "-s", "--segment"))
+        const char *arg = argv[argi];
+        if (vstrcmp(arg, 2, OPT_SEGMENT, OPT_SEGMENT_LONG))
         {
-            if (++arg_index < argc)
+            if (++argi < argc)
             {
                 char **optargs = NULL;
-                int n_optargs = split_optargs(&optargs, argv[arg_index], ",", 2);
+                int n_optargs = split_optargs(&optargs, argv[argi], ",", 2);
                 if (n_optargs >= 2)
                 {
                     Segment segment;
@@ -75,9 +76,9 @@ int main(int argc, char **argv)
                 return err_no_arg(basename, arg);
             }
         }
-        else if (streqor(arg, "-p", "--preset"))
+        else if (vstrcmp(arg, 2, OPT_PRESET, OPT_PRESET_LONG))
         {
-            if (++arg_index < argc)
+            if (++argi < argc)
             {
                 if (!presets)
                 {
@@ -101,8 +102,8 @@ int main(int argc, char **argv)
                     }
                 }
 
-                char *optarg = argv[arg_index];
-                if (streq(optarg, "list"))
+                char *optarg = argv[argi];
+                if (vstrcmp(optarg, 1, OPTARG_PRESET_LIST))
                 {
                     display_presets(presets, n_presets);
                     return EXIT_SUCCESS;
@@ -113,7 +114,7 @@ int main(int argc, char **argv)
                     for (int preset_i = 0; preset_i < n_presets; ++preset_i)
                     {
                         const SegmentGroup preset = presets[preset_i];
-                        if (streq(optarg, preset.name))
+                        if (vstrcmp(optarg, 1, preset.name))
                         {
                             found_preset = true;
                             for (int segment_i = 0; segment_i < preset.length; ++segment_i)
@@ -144,19 +145,19 @@ int main(int argc, char **argv)
                 return err_no_arg(basename, arg);
             }
         }
-        else if (streqor(arg, "-c", "--config"))
+        else if (vstrcmp(arg, 2, OPT_CONFIG, OPT_CONFIG_LONG))
         {
-            if (++arg_index < argc)
+            if (++argi < argc)
             {
-                presets_path = argv[arg_index];
+                presets_path = argv[argi];
             }
         }
-        else if (streqor(arg, "-h", "--help"))
+        else if (vstrcmp(arg, 2, OPT_HELP, OPT_HELP_LONG))
         {
             display_help(basename);
             return EXIT_SUCCESS;
         }
-        else if (streq(arg, "--version"))
+        else if (vstrcmp(arg, 1, OPT_VERSION_LONG))
         {
             display_version();
             return EXIT_SUCCESS;

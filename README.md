@@ -9,33 +9,34 @@ Display lines of color in a true color terminal.
 
 ## Build Requireements
 
-- `gcc`
 - `cmake` >= 3.1
+- `gcc`
+- `gettext`
 - `cjson`
 
 ## Building
 
-`(mkdir -p build && cd build && cmake .. && make)`
+`$ (mkdir -p build && cd build && cmake .. && make)`
 
 ## Installation (as root)
 
-`(cd build && make install)`
+`$ (cd build && make install)`
 
 ## Uninstallation
 
-`(cd build && make uninstall)`
+`$ (cd build && make uninstall)`
 
 ## Usage
 
-See `chromashell -h`
+See output of `$ chromashell -h`
 
 ### Example: Display a transgender flag
 
-`chromashell -p trans`
+`$ chromashell -p trans`
 
 Or:
 
-`chromashell -s 7ACBF5,2 -s EAACB8,2 -s FFFFFF,2 -s EAACB8,2 -s 7ACBF5,2`
+`$ chromashell -s 7ACBF5,2 -s EAACB8,2 -s FFFFFF,2 -s EAACB8,2 -s 7ACBF5,2`
 
 ## License
 
