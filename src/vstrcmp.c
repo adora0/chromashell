@@ -1,5 +1,5 @@
-#include <stdbool.h>
 #include <stdarg.h>
+#include <stdbool.h>
 #include <string.h>
 
 #include "vstrcmp.h"

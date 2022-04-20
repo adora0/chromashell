@@ -1,12 +1,12 @@
-#include <stdio.h>
-#include <string.h>
 #include <stddef.h>
+#include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
-#include "shell.h"
+#include "config.h"
 #include "errmsg.h"
 #include "segment.h"
-#include "config.h"
+#include "shell.h"
 
 /*
 * Split arguments to command line option by delimiter.

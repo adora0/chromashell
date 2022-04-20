@@ -4,21 +4,21 @@
 */
 
 #include <locale.h>
-#include <stddef.h>
 #include <stdbool.h>
-#include <string.h>
+#include <stddef.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <sys/ioctl.h>
 
 #include "config.h"
-#include "segment.h"
-#include "vstrcmp.h"
+#include "errmsg.h"
 #include "options.h"
+#include "presets.h"
+#include "segment.h"
 #include "shell.h"
 #include "typecheck.h"
-#include "errmsg.h"
-#include "presets.h"
+#include "vstrcmp.h"
 
 int main(int argc, char **argv)
 {

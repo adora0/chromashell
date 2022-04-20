@@ -1,4 +1,7 @@
-/* CMake configured configuration header */
+/*
+* CMake configured configuration header
+*/
+
 #ifndef CONFIG_H
 #define CONFIG_H
 

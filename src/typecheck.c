@@ -1,8 +1,8 @@
-#include <stdbool.h>
-#include <string.h>
 #include <ctype.h>
-
+#include <stdbool.h>
 #include <stddef.h>
+#include <string.h>
+
 #include "typecheck.h"
 
 static const char *hex_digits_lower = "0123456789abcdef";

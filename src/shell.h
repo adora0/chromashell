@@ -7,9 +7,9 @@
 
 #include <sys/ioctl.h>
 
+#include "color.h"
 #include "i18n.h"
 #include "segment.h"
-#include "color.h"
 
 #define UNICODE_FULL_BLOCK  "\u2588"
 

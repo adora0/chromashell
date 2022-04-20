@@ -1,13 +1,13 @@
-#include <stdio.h>
-#include <stddef.h>
-#include <string.h>
-#include <stdlib.h>
-#include <stdbool.h>
 #include <cjson/cJSON.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
+#include "errmsg.h"
 #include "presets.h"
 #include "segment.h"
-#include "errmsg.h"
 
 /*
 * Load presets from file into struct pointed to by dest.
