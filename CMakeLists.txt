@@ -10,6 +10,9 @@ set(chromashell_VERSION_YEAR
 set(OUTPUT_NAME
     chromashell)
 
+# Flags
+set(CMAKE_CXX_FLAGS_DEBUG "-g")
+
 # Executable
 set(chromashell_CODE_SOURCE_DIR
     ${chromashell_SOURCE_DIR}/src)

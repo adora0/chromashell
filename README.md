@@ -2,6 +2,18 @@
 
 Display lines of color in a true color terminal.
 
+## Usage
+
+`$ chromashell -h`
+
+### Example: Display a transgender flag
+
+`$ chromashell -p trans`
+
+Or:
+
+`$ chromashell -s 7ACBF5,2 -s EAACB8,2 -s FFFFFF,2 -s EAACB8,2 -s 7ACBF5,2`
+
 ## Runtime requirements
 
 - POSIX-compliant operating system
@@ -18,7 +30,13 @@ Display lines of color in a true color terminal.
 
 ## Building
 
+### Release
+
 `$ (mkdir -p build && cd build && cmake .. && make)`
+
+### Debug
+
+`$ (mkdir -p build && cd build && cmake .. -DCMAKE_BUILD_TYPE=Debug && make)`
 
 ## Installation
 
@@ -27,18 +45,6 @@ Display lines of color in a true color terminal.
 ## Uninstallation
 
 `$ (cd build && make uninstall)`
-
-## Usage
-
-`$ chromashell -h`
-
-### Example: Display a transgender flag
-
-`$ chromashell -p trans`
-
-Or:
-
-`$ chromashell -s 7ACBF5,2 -s EAACB8,2 -s FFFFFF,2 -s EAACB8,2 -s 7ACBF5,2`
 
 ## Documentation
 

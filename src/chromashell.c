@@ -31,7 +31,7 @@ int main(int argc, char **argv)
 
     // Initialize variables set by options
     char *presets_path = NULL;
-    char *option_presets;
+    char *option_presets = NULL;
     size_t option_presets_sz = 0;
     size_t n_option_presets = 0;
     size_t len_option_presets = 0;
