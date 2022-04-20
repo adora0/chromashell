@@ -6,13 +6,15 @@ Display lines of color in a true color terminal.
 
 - POSIX-compliant operating system
 - Terminal with true color support
+- `cjson`
+- `gettext`
 
 ## Build requirements
 
+- `cjson`
 - `cmake` >= 3.1
 - `gcc`
 - `gettext`
-- `cjson`
 
 ## Building
 
