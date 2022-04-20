@@ -2,7 +2,7 @@
 
 Display lines of color in a true color terminal.
 
-## Requirements
+## Runtime requirements
 
 - POSIX-compliant operating system
 - Terminal with true color support
