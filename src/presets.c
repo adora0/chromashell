@@ -33,6 +33,7 @@ int load_presets(SegmentGroup **dest, FILE *file)
         }
     }
     
+    // Parse JSON
     if (json_str != NULL)
     {
         const cJSON *root = cJSON_ParseWithLength(json_str, json_strlen);

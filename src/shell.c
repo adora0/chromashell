@@ -63,16 +63,11 @@ void term_unset_color(void)
 
 void display_presets(SegmentGroup *presets, unsigned int n_presets)
 {
-    printf("Available presets:\n ");
+    printf("Available presets:\n");
     for (int i = 0; i < n_presets; ++i)
     {
-        printf("%s", presets[i].name);
-        if (i < n_presets - 1)
-        {
-            printf(" ");
-        }
+        printf("  %s\n", presets[i].name);
     }
-    printf("\n");
 }
 
 void display_help(const char *basename)
