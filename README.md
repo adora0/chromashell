@@ -7,7 +7,7 @@ Display lines of color in a true color terminal.
 - POSIX-compliant operating system
 - Terminal with true color support
 
-## Build requireements
+## Build requirements
 
 - `cmake` >= 3.1
 - `gcc`
