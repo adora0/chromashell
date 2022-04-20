@@ -1,5 +1,5 @@
 /*
-* CMake configured configuration header
+* CMake configured header
 */
 
 #ifndef CONFIG_H
