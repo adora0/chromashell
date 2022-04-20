@@ -1,6 +1,7 @@
 #include <stdbool.h>
 #include <string.h>
 #include <ctype.h>
+
 #include <stddef.h>
 #include "typecheck.h"
 
@@ -13,6 +14,7 @@ bool is_hex(const char *s)
     {
         if (strchr(hex_digits_lower, tolower(s[i])) == NULL)
         {
+            // Fail if digit is not hexadecimal
             return false;
         }
     }
@@ -26,6 +28,7 @@ bool is_uint(const char *s)
     {
         if (strchr(digits, s[i]) == NULL)
         {
+            // Fail if digit is not a number
             return false;
         }
     }

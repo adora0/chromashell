@@ -2,11 +2,17 @@
 #include <string.h>
 #include <stddef.h>
 #include <stdlib.h>
+
 #include "shell.h"
 #include "errmsg.h"
 #include "segment.h"
 #include "config.h"
 
+/*
+* Split arguments to command line option by delimiter.
+* Returns array of strings at pointer dest
+* Returns number of arguments
+*/
 int split_optargs(char ***dest, char *optarg, const char *delim, unsigned int max_args)
 {
     char **buf = *dest;

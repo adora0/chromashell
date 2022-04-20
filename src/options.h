@@ -1,3 +1,7 @@
+/*
+* Command line options
+*/
+
 #ifndef OPTIONS_H
 #define OPTIONS_H
 

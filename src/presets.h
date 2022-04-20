@@ -1,7 +1,12 @@
+/*
+* Preset loading routines
+*/
+
 #ifndef PRESETS_H
 #define PRESETS_H
 
 #include <stdio.h>
+
 #include "segment.h"
 
 #define JSON_PRESET_NAME        "name"

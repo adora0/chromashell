@@ -1,7 +1,12 @@
+/*
+* Command line routines
+*/
+
 #ifndef SHELL_H
 #define SHELL_H
 
 #include <sys/ioctl.h>
+
 #include "i18n.h"
 #include "segment.h"
 #include "color.h"

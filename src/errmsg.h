@@ -1,3 +1,8 @@
+/*
+* Error routines
+* Print message and return error code
+*/
+
 #ifndef ERROR_H
 #define ERROR_H
 
