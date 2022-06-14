@@ -58,6 +58,56 @@
         ]
     },
     {
+	"name": "genderfae",
+	"segments": [
+	    {
+		"color": "#95C4A4", 
+		"height": 1
+	    },
+	    {
+		"color": "#C2DEAE", 
+		"height": 1
+	    },
+	    {
+		"color": "#FAF9CE", 
+		"height": 1
+	    },
+	    {
+		"color": "#FFFFFF", 
+		"height": 1
+	    },
+	    {
+		"color": "#FCA3C4", 
+		"height": 1
+	    },
+	    {
+		"color": "#DB8AE3", 
+		"height": 1
+	    },
+	    {
+		"color": "#AB7EDD", 
+		"height": 1
+	    }
+	]
+    },
+    {
+	"name": "pansexual",
+	"segments": [
+	    {
+		"color": "#FF1B8D", 
+		"height": 3
+	    },
+	    {
+		"color": "#FFDA00", 
+		"height": 3
+	    },
+	    {
+		"color": "#1BB3FF", 
+		"height": 3
+	    }
+	]
+    },
+    {
         "name": "nonbinary",
         "segments": [
             {
