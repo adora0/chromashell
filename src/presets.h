@@ -1,6 +1,6 @@
 /*
-* Preset loading routines
-*/
+ * Preset loading routines
+ */
 
 #ifndef PRESETS_H
 #define PRESETS_H

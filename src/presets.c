@@ -10,11 +10,12 @@
 #include "segment.h"
 
 /*
-* Load presets from file into struct pointed to by dest.
-*/
+ * Load presets from file into struct pointed to by dest.
+ */
+
 int load_presets(SegmentGroup **dest, FILE *file)
 {
-    // Read lines
+    /* Read lines */
     char *json_str = NULL;
     char buf[100];
     int json_strlen = 0;
@@ -33,7 +34,7 @@ int load_presets(SegmentGroup **dest, FILE *file)
         }
     }
     
-    // Parse JSON
+    /* Parse JSON */
     if (json_str != NULL)
     {
         const cJSON *root = cJSON_ParseWithLength(json_str, json_strlen);
@@ -44,12 +45,12 @@ int load_presets(SegmentGroup **dest, FILE *file)
         unsigned int presets_sz = 0;
         if (cJSON_IsArray(root))
         {
-            // Process each preset in root array
+            /* Process each preset in root array */
             cJSON_ArrayForEach(item, root)
             {
                 SegmentGroup preset;
 
-                // Name
+                /* Name */
                 const cJSON *item_name = cJSON_GetObjectItem(item, JSON_PRESET_NAME);
                 if (item_name != NULL)
                 {
@@ -69,7 +70,7 @@ int load_presets(SegmentGroup **dest, FILE *file)
                     break;
                 }
                 
-                // Segments
+                /* Segments */
                 cJSON *item_segments = cJSON_GetObjectItem(item, JSON_PRESET_SEGMENTS);
                 if (item_segments != NULL)
                 {
@@ -79,12 +80,12 @@ int load_presets(SegmentGroup **dest, FILE *file)
                         Segment *segments = NULL;
                         unsigned int n_segments = 0;
 
-                        // Process each segment in segment array
+                        /* Process each segment in segment array */
                         cJSON_ArrayForEach(item_segment, item_segments)
                         {
                             Segment segment;
 
-                            // Color
+                            /* Color */
                             cJSON *segment_color = cJSON_GetObjectItem(item_segment, JSON_PRESET_COLOR);
                             if (segment_color != NULL)
                             {
@@ -115,7 +116,7 @@ int load_presets(SegmentGroup **dest, FILE *file)
                                 break;
                             }
 
-                            // Height
+                            /* Height */
                             cJSON *segment_height = cJSON_GetObjectItem(item_segment, JSON_PRESET_HEIGHT);
                             if (segment_height != NULL)
                             {
@@ -144,12 +145,12 @@ int load_presets(SegmentGroup **dest, FILE *file)
                                 break;
                             }
 
-                            // Add to segments
+                            /* Add to segments */
                             segments = realloc(segments, sizeof(Segment) * ++n_segments);
                             segments[n_segments - 1] = segment;
                         }
 
-                        // Copy segments into Preset struct
+                        /* Copy segments into Preset struct */
                         unsigned int segments_sz = n_segments * sizeof(Segment);
                         preset.segments = malloc(segments_sz);
                         memcpy(preset.segments, segments, segments_sz);
@@ -167,7 +168,7 @@ int load_presets(SegmentGroup **dest, FILE *file)
                     break;
                 }
 
-                // Copy preset into array
+                /* Copy preset into array */
                 presets_sz += sizeof(SegmentGroup);
                 presets = realloc(presets, presets_sz);
                 if (presets != NULL)
@@ -194,7 +195,7 @@ int load_presets(SegmentGroup **dest, FILE *file)
         }
         else if (presets != NULL)
         {
-            // Point destination argument to preset array
+            /* Point destination argument to preset array */
             *dest = presets;
         }
 

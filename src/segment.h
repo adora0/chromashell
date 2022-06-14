@@ -1,6 +1,6 @@
 /*
-* Segment and segment array definitions
-*/
+ * Segment and segment array definitions
+ */
 
 #ifndef SEGMENT_H
 #define SEGMENT_H

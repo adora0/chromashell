@@ -5,9 +5,10 @@
 #include "vstrcmp.h"
 
 /*
-* Return if string s is equal to one of the variadic string arguments,
-* where n is the number of proceeding arguments
-*/
+ * Return if string s is equal to one of the variadic string arguments,
+ * where n is the number of proceeding arguments
+ */
+
 bool vstrcmp(const char *s, unsigned int n, ...)
 {
     va_list args;
@@ -17,7 +18,7 @@ bool vstrcmp(const char *s, unsigned int n, ...)
     {
         if (strcmp(s, va_arg(args, const char *)) == 0)
         {
-            // Succeed if equal to any comparison string
+            /* Succeed if equal to any comparison string */
             va_end(args);
             return true;
         }

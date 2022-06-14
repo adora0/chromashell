@@ -14,7 +14,7 @@ bool is_hex(const char *s)
     {
         if (strchr(hex_digits_lower, tolower(s[i])) == NULL)
         {
-            // Fail if digit is not hexadecimal
+            /* Fail if digit is not hexadecimal */
             return false;
         }
     }
@@ -28,7 +28,7 @@ bool is_uint(const char *s)
     {
         if (strchr(digits, s[i]) == NULL)
         {
-            // Fail if digit is not a number
+            /* Fail if digit is not a number */
             return false;
         }
     }

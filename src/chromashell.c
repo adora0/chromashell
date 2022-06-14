@@ -1,7 +1,7 @@
 /*
-* ChomaShell
-* Display lines of color in a true color terminal.
-*/
+ * ChomaShell
+ * Display lines of color in a true color terminal.
+ */
 
 #include <locale.h>
 #include <stdbool.h>
@@ -22,14 +22,14 @@
 
 int main(int argc, char **argv)
 {
-    // Initialize internationalization
+    /* Initialize internationalization */
     setlocale(LC_ALL, NULL);
     textdomain(PROJECT_NAME);
 
-    // Executable name
+    /* Executable name */
     const char *basename = (const char *) argv[0];
 
-    // Initialize variables set by options
+    /* Initialize variables set by options */
     char *presets_path = NULL;
     char *option_presets = NULL;
     size_t option_presets_sz = 0;
@@ -41,21 +41,21 @@ int main(int argc, char **argv)
     
     bool arg_parsed = false;
 
-    // Process command line arguments
+    /* Process command line arguments */
     for (int argi = 1; argi < argc; ++argi)
     {
         const char *arg = argv[argi];
 
-        // Check each option
+        /* Check each option */
         if (vstrcmp(arg, 2, OPT_SEGMENT, OPT_SEGMENT_LONG))
         {
-            // Segment properties
+            /* Segment properties */
             if (++argi < argc)
             {
                 char **optargs = NULL;
                 int n_optargs = split_optargs(&optargs, argv[argi], OPTARG_SEPARATOR, 2);
 
-                // Check for RRGGBB,HEIGHT
+                /* Check for RRGGBB,HEIGHT */
                 if (n_optargs >= 2)
                 {
                     Segment segment;
@@ -63,14 +63,14 @@ int main(int argc, char **argv)
                     char *s_height = optargs[1];
                     if (hex_string_to_color(s_color, &segment.color, false) == 0 && is_uint(s_height))
                     {
-                        // Convert height string
+                        /* Convert height string */
                         segment.height = (unsigned int) atoi(s_height);
 
-                        // Extend segments
+                        /* Extend segments */
                         segments = realloc(segments, sizeof(Segment) * ++n_segments);
                         if (segments != NULL)
                         {
-                            // Copy segment
+                            /* Copy segment */
                             memcpy(&segments[n_segments - 1], &segment, sizeof(Segment));
                             free(optargs);
                         }
@@ -100,18 +100,18 @@ int main(int argc, char **argv)
         }
         else if (vstrcmp(arg, 2, OPT_PRESET, OPT_PRESET_LONG))
         {
-            // Preset name
+            /* Preset name */
             if (++argi < argc)
             {
                 char *optarg = argv[argi];
 
-                // Extend specified presets string (separated by null terminator)
+                /* Extend specified presets string (separated by null terminator) */
                 size_t len_optarg = strlen(optarg);
                 size_t new_sz = option_presets_sz + sizeof(char) * len_optarg + 1;
                 option_presets = realloc(option_presets, new_sz);
                 if (option_presets != NULL)
                 {
-                    // Copy preset name
+                    /* Copy preset name */
                     strcpy(option_presets + option_presets_sz, optarg);
                     option_presets_sz = new_sz;
                     ++n_option_presets;
@@ -131,7 +131,7 @@ int main(int argc, char **argv)
         }
         else if (vstrcmp(arg, 2, OPT_CONFIG, OPT_CONFIG_LONG))
         {
-            // Configuration path
+            /* Configuration path */
             if (++argi < argc)
             {
                 presets_path = argv[argi];
@@ -139,30 +139,30 @@ int main(int argc, char **argv)
         }
         else if (vstrcmp(arg, 2, OPT_HELP, OPT_HELP_LONG))
         {
-            // Help
+            /* Help */
             display_help(basename);
             return EXIT_SUCCESS;
         }
         else if (vstrcmp(arg, 1, OPT_VERSION_LONG))
         {
-            // Version
+            /* Version */
             display_version();
             return EXIT_SUCCESS;
         }
         else
         {
-            // Unrecognized option
+            /* Unrecognized option */
             return err_no_opt(basename, arg);
         }
     }
 
-    // Terminal window size
+    /* Terminal window size */
     winsize winsz;
     ioctl(0, TIOCGWINSZ, &winsz);
 
     if (!arg_parsed)
     {
-        // No arguments parsed
+        /* No arguments parsed */
         display_help(basename);
         return EXIT_FAILURE;
     }
@@ -173,7 +173,7 @@ int main(int argc, char **argv)
             SegmentGroup *presets = NULL;
             int n_presets = 0;
 
-            // Load presets
+            /* Load presets */
             if (!presets_path)
             {
                 presets_path = DEFAULT_PRESET_PATH;
@@ -196,10 +196,10 @@ int main(int argc, char **argv)
             char *option_preset = option_presets;
             for (int i = 0; i < n_option_presets; ++i)
             {
-                // Find specified preset
+                /* Find specified preset */
                 if (vstrcmp(option_preset, 1, OPTARG_PRESET_LIST))
                 {
-                    // List available presets
+                    /* List available presets */
                     display_presets(presets, n_presets);
                     return EXIT_SUCCESS;
                 }
@@ -212,14 +212,14 @@ int main(int argc, char **argv)
                     {
                         found_preset = true;
 
-                        // Copy segments
+                        /* Copy segments */
                         for (int segment_i = 0; segment_i < preset.length; ++segment_i)
                         {
-                            // Extend segments
+                            /* Extend segments */
                             segments = realloc(segments, sizeof(Segment) * ++n_segments);
                             if (segments != NULL)
                             {
-                                // Copy segment
+                                /* Copy segment */
                                 segments[n_segments - 1] = preset.segments[segment_i];
                             }
                             else
@@ -235,7 +235,7 @@ int main(int argc, char **argv)
                     return err_no_preset(basename, option_preset);
                 }
 
-                // Get next specified preset name
+                /* Get next specified preset name */
                 char *tmp = strchr(option_preset, 0);
                 if (tmp != NULL && tmp < option_presets + len_option_presets + 1)
                 {
@@ -251,7 +251,7 @@ int main(int argc, char **argv)
 
         if (n_segments > 0)
         {
-            // Print segments
+            /* Print segments */
             for (int i = 0; i < n_segments; ++i)
             {
                 print_segment(&winsz, &segments[i]);

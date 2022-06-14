@@ -1,6 +1,6 @@
 /*
-* String comparison with variadic arguments
-*/
+ * String comparison with variadic arguments
+ */
 
 #ifndef VSTRCMP_H
 #define VSTRCMP_H
